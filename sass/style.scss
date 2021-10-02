@@ -1,0 +1,50 @@
+@import "reset";
+@import "nav";
+@import "footer";
+
+$titulos: (
+  h1: 70px,
+  h2: 40px,
+  h3: 30px,
+);
+@each $titulo, $size in $titulos {
+  .titulo__#{$titulo} {
+    font-size: $size;
+  }
+}
+.container__1 {
+  width: 100%;
+  padding: 20px / (2);
+  background-color: honeydew;
+  div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    .texto__relleno {
+      width: 400px * 2;
+    }
+  }
+}
+
+@mixin caja($letra, $fondo) {
+  width: 100%;
+  margin: 30px 5px;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 10px;
+  color: $letra;
+  background-color: $fondo;
+}
+.caja__informacion {
+  display: flex;
+  .container__2 {
+    @include caja(rgb(175, 1, 175), yellow);
+  }
+  .container__3 {
+    @include caja(rgb(5, 177, 5), red);
+  }
+  .container__4 {
+    @include caja(rgb(255, 193, 77), blue);
+  }
+}
